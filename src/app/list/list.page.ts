@@ -1,39 +1,64 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import * as data from '../../assets/data.json';
+
 
 @Component({
-  selector: 'app-list',
-  templateUrl: 'list.page.html',
-  styleUrls: ['list.page.scss']
+    selector: 'app-list',
+    templateUrl: 'list.page.html',
+    styleUrls: ['list.page.scss']
 })
 export class ListPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
-  }
 
-  ngOnInit() {
-  }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
+    public static favorites = ['51'];
+
+    public static categories = [
+        {
+            title: 'Self Help',
+            icon: 'fa-hands-helping',
+            color: '#2ecc71',
+            type: 'selfhelp'
+        }, {
+            title: 'Counselling',
+            icon: 'fa-comments-alt',
+            color: '#1abc9c',
+            type: 'counselling'
+        }, {
+            title: 'Service',
+            icon: 'fa-people-carry',
+            color: '#3498db',
+            type: 'service'
+        }, {
+            title: 'Meals',
+            icon: 'fa-utensils',
+            color: '#9b59b6',
+            type: 'meals'
+        }, {
+            title: 'Living',
+            icon: 'fa-home-lg-alt',
+            color: '#e67e22',
+            type: 'living'
+        }, {
+            title: 'Transport',
+            icon: 'fa-wheelchair',
+            color: '#e74c3c',
+            type: 'transport'
+        }
+    ];
+
+    public items = [];
+
+
+    constructor() {
+        const services: any = data;
+        this.items = services.default.slice(7, 15);
+    }
+
+    ngOnInit() {
+    }
+
+    public getCategories() {
+        return ListPage.categories;
+    }
+
 }

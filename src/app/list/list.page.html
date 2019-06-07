@@ -1,27 +1,45 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-button routerLink="/search">
+                <ion-icon slot="icon-only" name="search"></ion-icon>Search
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
+    <h2 class="inline">Categories</h2>
+
+    <ion-row>
+
+        <ion-col size="6" *ngFor="let item of getCategories() | keyvalue">
+            <ion-card [routerLink]="['/category/'+item.key]">
+
+                <ion-card-header>
+
+                    <ion-card-title>
+                        <div class="icon" [style.background-color]="item.value.color">
+                            <i class="fal {{item.value.icon}} fa-2x"></i>
+                        </div>
+
+                        {{item.value.title}}
+                    </ion-card-title>
+                </ion-card-header>
+
+            </ion-card>
+
+        </ion-col>
+
+    </ion-row>
+
+
+    <!--
+      <div *ngIf="selectedItem" padding>
+        You navigated here from <b>{{selectedItem.title }}</b>
       </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+    -->
 </ion-content>

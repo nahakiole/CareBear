@@ -1,5 +1,7 @@
 {
   "name": "CareBear",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
