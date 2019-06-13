@@ -19,7 +19,11 @@ import {InAppBrowser} from '@ionic-native/in-app-browser/ngx';
     entryComponents: [],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(),
+        IonicModule.forRoot(
+            {
+                mode: 'md'
+            }
+        ),
         AppRoutingModule
     ],
     providers: [
