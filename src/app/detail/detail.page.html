@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="services"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title>Detail</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div class="icon" [style.background-color]="getType(item.type).color">
+            <i class="fal {{getType(item.type).icon}} fa-2x"></i>
+        </div>
+        <ion-card-header>
+            <ion-card-subtitle>{{getType(item.type).title}}</ion-card-subtitle>
+            <ion-card-title>
+                {{item.name}}
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p class="address"> {{item.adress}}, {{item.city}} </p>
+
+            {{item.description_en}}
+
+
+            <h2>Opening hours</h2>
+
+            <ion-grid class="opening-times">
+                <ion-row>
+                    <ion-col>
+                        <h2>Monday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <h2>Tuesday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <h2>Wednesday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <h2>Thursday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <h2>Friday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <h2>Saturday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>08:00 - 17:00</h2>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col>
+                        <h2>Sunday</h2>
+                    </ion-col>
+                    <ion-col>
+                        <h2>Closed</h2>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
+            <ion-button expand="block" *ngIf="item.phone.length > 0" (click)="call(item.phone)"><i
+                    class="fas fa-phone"></i> Call {{item.phone}}
+            </ion-button>
+            <ion-button expand="block" *ngIf="item.email.length > 0" (click)="sendMail(item.email)"><i
+                    class="fas fa-envelope"></i> Send E-Mail
+            </ion-button>
+            <ion-button expand="block" *ngIf="item.adress.length > 0" (click)="openMaps(item)"><i class="fas fa-map"></i> Show on Google Maps
+            </ion-button>
+            <ion-button expand="block" *ngIf="item.website.length > 0" (click)="openWebpage(item.website)"><i
+                    class="fas fa-globe"></i> Open website
+            </ion-button>
+
+            <ion-button expand="block" (click)="addFavorite(item.id)" *ngIf="!isFavorite(item.id)"><i class="fal fa-star"></i> Save as favorite</ion-button>
+
+            <ion-button expand="block" (click)="removeFavorite(item.id)"  *ngIf="isFavorite(item.id)"><i class="fas fa-star"></i> Remove favorite</ion-button>
+
+
+            <ion-button expand="block" (click)="addReminder(item)"><i class="fas fa-clock"></i> Add reminder</ion-button>
+        </ion-card-content>
+        <div class="status open">
+            <i class="fal fa-clock"></i> Opened until 19:00
+        </div>
+        <div class="distance">
+            <i class="fas fa-location-arrow"></i> 30km far away
+        </div>
+    </ion-card>
+</ion-content>

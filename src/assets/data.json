@@ -675,7 +675,7 @@
   },
   {
     "id": "52",
-    "name": "Priscilla's Alzheimer Helpline",
+    "name": "Prof. Serge Bignens's Alzheimer Helpline",
     "category": "Sprechen - Forum (internet)",
     "cost": "internet",
     "description_en": "A helpline for caregivers caring for people with alzheimers.",
@@ -684,7 +684,7 @@
     "city": "2501 Biel",
     "email": "priscilla.deoliveiramatos@students.bfh.ch",
     "website": "https://www.bfh.ch/ti/de/ueber-das-ti/standort-infrastruktur/",
-    "phone": "078 708 45 31",
+    "phone": "032 321 67 01",
     "type": "service"
   }
 ]

@@ -1,0 +1,32 @@
+<ion-card [routerLink]="[link]">
+
+  <ion-card-header>
+    <ion-card-subtitle>{{getType(item.type)}}</ion-card-subtitle>
+    <ion-card-title>
+      {{item.name}}
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-button class="detailButton" color="primary" ><i
+            class="fal fa-chevron-right"></i></ion-button>
+
+    <p class="description">
+      {{item.description_en}}
+    </p>
+
+    <div class="address" *ngIf="item.adress">
+      {{item.adress}}, {{item.city}}
+    </div>
+
+
+
+  </ion-card-content>
+  <div class="status open">
+    <i class="fal fa-clock"></i> Opened until 18:00
+  </div>
+
+  <div class="distance">
+    <i class="fas fa-location-arrow"></i> 30km far away
+  </div>
+
+</ion-card>

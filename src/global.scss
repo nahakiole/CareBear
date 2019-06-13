@@ -69,3 +69,21 @@ app-detail ion-card{
   margin-top: -10px;
 }
 
+
+
+ion-card-title.ios.hydrated {
+  font-size: 13px;
+}
+
+.sc-ion-card-ios-h {
+  margin: 5px;
+}
+
+.ios .icon {
+  padding: 15px;
+  margin: -15px -15px 14px;
+}
+
+ion-card-header.ios.hydrated {
+  padding: 12px;
+}

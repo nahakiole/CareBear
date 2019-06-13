@@ -1,0 +1,99 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="services"></ion-back-button>
+        </ion-buttons>
+
+        <ion-title>Check-In</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <div class="bearHider">
+            <app-care-bear></app-care-bear>
+        </div>
+
+        <ion-card-header>
+            <ion-card-subtitle>Check-In</ion-card-subtitle>
+            <ion-card-title>
+                How are you feeling?
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>We are checking in with you to make sure that even with taking care of someone else you're still taking
+                care of yourself. </p>
+
+            <h2>How stressed do you feel?</h2>
+
+            <ion-segment>
+                <ion-segment-button value="5">
+                    <i class="fal fa-laugh fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="4">
+                    <i class="fal fa-grin fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="3">
+                    <i class="fal fa-smile fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="2">
+                    <i class="fal fa-frown fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="1">
+                    <i class="fal fa-frown-open fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="0">
+                    <i class="fal fa-tired fa-2x"></i>
+                </ion-segment-button>
+            </ion-segment>
+
+
+            <h2>How happy do you feel?</h2>
+            <ion-segment>
+                <ion-segment-button value="5">
+                    <i class="fal fa-laugh fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="4">
+                    <i class="fal fa-grin fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="3">
+                    <i class="fal fa-smile fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="2">
+                    <i class="fal fa-frown fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="1">
+                    <i class="fal fa-frown-open fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="0">
+                    <i class="fal fa-tired fa-2x"></i>
+                </ion-segment-button>
+            </ion-segment>
+
+            <h2>How much energy do you have?</h2>
+            <ion-segment>
+                <ion-segment-button value="5">
+                    <i class="fal fa-battery-full fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="4">
+                    <i class="fal fa-battery-three-quarters fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="3">
+                    <i class="fal fa-battery-half fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="2">
+                    <i class="fal fa-battery-quarter fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="1">
+                    <i class="fal fa-battery-empty fa-2x"></i>
+                </ion-segment-button>
+                <ion-segment-button value="0">
+                    <i class="fal fa-battery-slash fa-2x"></i>
+                </ion-segment-button>
+            </ion-segment>
+
+            <ion-button color="primary" [routerLink]="'/aftercheck'">Save</ion-button>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

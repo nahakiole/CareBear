@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="services"></ion-back-button>
+        </ion-buttons>
+        Search
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-searchbar placeholder="Search Entries" [debounce]="400" #search></ion-searchbar>
+    <div class="no-result" *ngIf="filteredItems.length == 0">
+        <div class="circle">
+            <app-care-bear [properties]="'searching'"></app-care-bear>
+        </div>
+
+        <h2>No results, try searching for something.</h2>
+    </div>
+
+
+    <ion-row>
+        <ion-col size="12">
+
+            <ion-list>
+                <app-entry *ngFor="let item of filteredItems | keyvalue" [routerLink]="'/detail/'+item.value.id"
+                           [item]="item.value">
+                </app-entry>
+            </ion-list>
+        </ion-col>
+
+    </ion-row>
+
+    <!--
+      <div *ngIf="selectedItem" padding>
+        You navigated here from <b>{{selectedItem.title }}</b>
+      </div>
+    -->
+</ion-content>

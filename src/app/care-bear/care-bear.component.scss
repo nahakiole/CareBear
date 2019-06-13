@@ -1,0 +1,545 @@
+.animation {
+  max-height: 35vh;
+  overflow: hidden;
+  height: 230px;
+  background: #3babef;
+  position: relative;
+}
+
+.hill {
+  background: #3f8d42;
+  width: 37%;
+  height: 100px;
+  border-radius: 100% 100% 0 0;
+  position: absolute;
+  left: -5px;
+  top: 130px;
+}
+
+.second-hill {
+  width: 40%;
+  left: 30%;
+  top: 140px;
+  background: #39813b;
+}
+
+.third-hill {
+  width: 42%;
+  left: 64%;
+  top: 140px;
+  background: #347536;
+}
+
+.tree {
+  left: 10px;
+  top: 10px;
+  background: #4CAF50;
+  width: 100px;
+  height: 90px;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.second-tree {
+  left: 80%;
+  top: 40px;
+  background: #49a84d;
+}
+
+.tree:after {
+  content: '';
+  background: #674310;
+  width: 10px;
+  height: 46px;
+  position: absolute;
+  left: 47%;
+  top: 95%;
+}
+
+.grass {
+  z-index: 10;
+  left: 28%;
+  top: 60px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 20px 200px 20px;
+  border-color: transparent transparent #0d9600 transparent;
+  border-radius: 100%;
+  position: absolute;
+  transform: rotate(-20deg) translateX(-80px) translateY(40px);
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.grass + .grass {
+  top: 66px;
+  left: 37%;
+  transform: rotate(-20deg) translateX(-80px) translateY(40px);
+}
+
+.grass + .grass + .grass {
+
+  top: 55px;
+  left: 45%;
+  transform: rotate(-20deg) translateX(-80px) translateY(40px);
+}
+
+.grass + .grass + .grass + .grass {
+  left: 52%;
+  transform: rotate(20deg) translateX(80px) translateY(40px);
+}
+
+.grass + .grass + .grass + .grass + .grass {
+  left: 57%;
+  transform: rotate(20deg) translateX(80px) translateY(40px);
+}
+
+.grass + .grass + .grass + .grass + .grass + .grass {
+  left: 66%;
+  transform: rotate(20deg) translateX(80px) translateY(40px);
+}
+
+.bear {
+  bottom: 0;
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 300px;
+  height: 220px;
+  background: none;
+  transform: translateY(20px);
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.head {
+  position: absolute;
+  top: 5.5%;
+  left: 25%;
+  width: 50%;
+  height: 67%;
+  background: #5A473A;
+  border-radius: 50%;
+}
+
+.head-copy {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #5A473A;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.ear-left {
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  left: -10%;
+  top: 5%;
+  background: #5A473A;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.ear-right {
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  right: -10%;
+  top: 5%;
+  background: #5A473A;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.inner-ear {
+  position: absolute;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  background: #8E796D;
+}
+
+.eye-left {
+  position: absolute;
+  background: white;
+  width: 20%;
+  height: 23%;
+  top: 25%;
+  left: 29%;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.eye-right {
+  position: absolute;
+  background: white;
+  width: 20%;
+  height: 23%;
+  top: 25%;
+  right: 29%;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.pupil {
+  position: absolute;
+  width: 67%;
+  height: 67%;
+  top: 35%;
+  left: 18%;
+  border-radius: 50%;
+  background: #27354A;
+}
+
+.nose {
+  position: absolute;
+  background: #27354A;
+  width: 15%;
+  height: 15.5%;
+  left: 43%;
+  top: 45%;
+  border-radius: 50px;
+  z-index: 4;
+
+}
+
+.mouth {
+  position: absolute;
+  width: 55%;
+  height: 45%;
+  top: 55%;
+  left: 22.5%;
+  border-radius: 50%;
+  background: #BFADA5;
+  z-index: 3;
+
+}
+
+.body {
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  width: 50%;
+  height: 67%;
+  background: #5A473A;
+  border-radius: 50%;
+}
+
+.claw {
+  background: #27354a;
+  width: 5px;
+  height: 15px;
+  left: 8px;
+  position: absolute;
+}
+
+.claw + .claw {
+  left: 16px
+}
+
+.claw + .claw + .claw {
+  left: 24px
+}
+
+@keyframes leftgrass {
+  from {
+    transform: rotate(-1deg) translateX(0px) translateY(0px);
+  }
+  10% {
+    transform: rotate(-1deg) translateX(0px) translateY(0px);
+  }
+  to {
+    transform: rotate(-20deg) translateX(-90px) translateY(40px) !important;
+  }
+}
+
+@keyframes rightgrass {
+  from {
+    transform: rotate(1deg) translateX(0px) translateY(40px);
+  }
+  10% {
+    transform: rotate(1deg) translateX(0px) translateY(40px);
+  }
+  to {
+    transform: rotate(20deg) translateX(80px) translateY(40px) !important;
+  }
+}
+
+.animation .grass + .grass + .grass + .grass {
+  animation-name: rightgrass;
+  animation-duration: 4s;
+}
+
+.animation .grass {
+  animation-name: leftgrass;
+  animation-duration: 4s;
+}
+
+@keyframes bear {
+  from {
+    transform: translateY(180px);
+  }
+  10% {
+    transform: translateY(180px);
+  }
+  60% {
+    transform: translateY(80px);
+  }
+  80% {
+    transform: translateY(80px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+.paw-left, .paw-right {
+  position: absolute;
+  bottom: -10%;
+  left: 17%;
+  width: 12%;
+  height: 50%;
+  background: #5A473A;
+  border-radius: 30px 30px 0 0;
+  transform: rotate(-10deg);
+  z-index: 100;
+  transition: 0.5s all;
+  overflow: hidden;
+}
+
+.paw-left {
+  left: 72%;
+  transform: rotate(10deg);
+}
+
+@keyframes rightpaw {
+  from {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(-10deg) translate(-10px, -30px);
+  }
+  83% {
+    transform: rotate(10deg) translate(-10px, -30px);
+  }
+  86% {
+    transform: rotate(-10deg) translate(-10px, -30px);
+  }
+  89% {
+    transform: rotate(10deg) translate(-10px, -30px);
+  }
+  92% {
+    transform: rotate(-10deg) translate(-10px, -30px);
+  }
+  95% {
+    transform: rotate(10deg) translate(-10px, -30px);
+  }
+  to {
+    transform: rotate(-10deg);
+  }
+}
+
+.animation .paw-right {
+  animation-name: rightpaw;
+  animation-duration: 8s;
+}
+
+.animation .bear {
+  animation-name: bear;
+  animation-duration: 6s;
+}
+
+.ear-left, .ear-right {
+  animation-name: ear;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ear {
+  from {
+    transform: translate(0px, 5px);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  to {
+    transform: translate(0px, 5px);
+  }
+}
+
+.smile {
+  position: absolute;
+  width: 40%;
+  height: 13%;
+  top: 76%;
+  left: 30.5%;
+  background: #27354a;
+  z-index: 3;
+  border-radius: 0 0 100% 100%;
+}
+
+.smile:after {
+  content: '';
+  background: #bfada5;
+  width: 100%;
+  position: absolute;
+  height: 63%;
+  border-radius: 0 0 100% 100%;
+  top:0;
+  left:0;
+}
+
+.sad .smile {
+  border-radius: 100% 100% 0 0;
+}
+
+.sad .smile:after {
+  top: 38%;
+  border-radius: 100% 100% 0 0;
+}
+
+.pupil {
+  animation-name: pupil;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  transform: translate(0px, 5px);
+}
+
+@keyframes pupil {
+  from {
+    transform: translate(0px, 0);
+  }
+  45% {
+    transform: translate(0px, 0);
+  }
+  50% {
+    transform: translate(5px, 0);
+  }
+  60% {
+    transform: translate(-5px, 0);
+  }
+  65% {
+    transform: translate(0px, 0);
+  }
+  to {
+    transform: translate(0px, 0);
+  }
+}
+
+.animation .paw-left {
+  animation-name: leftpaw;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  transform: translate(0px, 5px);
+}
+
+@keyframes leftpaw {
+  from {
+    transform: translate(0, 0) rotate(0);
+  }
+  40% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(-66px, -44px) rotate(-22deg);
+  }
+  51% {
+    transform: translate(-70px, -46px) rotate(-22deg);
+  }
+  52% {
+    transform: translate(-66px, -44px) rotate(-22deg);
+  }
+  53% {
+    transform: translate(-70px, -46px) rotate(-22deg);
+  }
+  60% {
+    transform: translate(0, 0) rotate(0);
+  }
+  to {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+.cloud {
+  background: #fff;
+  width: 100px;
+  height: 67px;
+  position: absolute;
+  border-radius: 100% 100% 50px 50px;
+  left: 0px;
+  top: 10px;
+  animation-name: cloud;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  transform: translate(0px, 0px);
+}
+
+.cloud:after {
+  content: '';
+  background: #fff;
+  width: 106px;
+  height: 50px;
+  position: absolute;
+  border-radius: 1000%;
+  left: 17px;
+  bottom: -2px;
+}
+
+.cloud:before {
+  content: '';
+  background: #fff;
+  width: 79px;
+  height: 45px;
+  position: absolute;
+  border-radius: 100%;
+  left: -19px;
+  bottom: -5px;
+}
+
+
+@keyframes cloud {
+  from {
+    transform: translate(-200px, 0px);
+  }
+  to {
+    transform: translate(600px, 0px);
+  }
+}
+
+.searching .paw-right {
+  animation: none;
+  transform: rotate(-22deg) translate(8px, -11px);
+}
+
+.searching .magnifying-glass {
+  background: #333;
+  width: 10px;
+  height: 96px;
+  position: absolute;
+  left: 79px;
+  z-index: 10;
+  top: 67px;
+  transform: rotate(45deg);
+}
+
+.searching .magnifying-glass:after {
+  content: '';
+  border: 8px solid #333;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  left: -23px;
+  top: -48px;
+}

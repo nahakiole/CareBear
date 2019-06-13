@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="services"></ion-back-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button routerLink="/search">
+                <ion-icon slot="icon-only" name="search"></ion-icon>Search
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <div class="icon" [style.background-color]="category.color">
+        <i class="fal {{category.icon}} fa-2x"></i>
+
+        {{category.title}}
+    </div>
+
+
+    <ion-row>
+
+        <ion-col size="6" *ngFor="let item of categories | keyvalue">
+            <ion-card [routerLink]="['/category/'+item.key]">
+
+                <ion-card-header>
+
+                    <ion-card-title>
+                        <div class="icon" [style.background-color]="item.value.color">
+                            <i class="fal {{item.value.icon}} fa-2x"></i>
+                        </div>
+
+                        {{item.value.title}}
+                    </ion-card-title>
+                </ion-card-header>
+
+            </ion-card>
+
+        </ion-col>
+
+
+    </ion-row>
+
+    <ion-row>
+        <ion-col size="12">
+
+            <ion-list>
+                <app-entry *ngFor="let item of items | keyvalue" [link]="'/detail/'+item.value.id" [item]="item.value">
+                </app-entry>
+            </ion-list>
+        </ion-col>
+
+    </ion-row>
+
+</ion-content>

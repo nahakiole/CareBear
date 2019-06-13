@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/search">
+        <ion-icon slot="icon-only" name="search"></ion-icon>Search
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <h2 class="inline"><i class="fas fa-star"></i> Favorites</h2>
+
+  <ion-row>
+    <ion-col size="12">
+
+
+      <ion-list>
+        <app-entry *ngFor="let item of items | keyvalue" [link]="'/detail/'+item.value.id" [item]="item.value">
+        </app-entry>
+      </ion-list>
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>

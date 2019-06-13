@@ -1,0 +1,96 @@
+<ion-header>
+    <ion-toolbar color="primary">
+
+        <ion-title>Resultate</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <div class="bearHider" >
+            <app-care-bear [properties]="'sad'"></app-care-bear>
+        </div>
+
+        <ion-card-header>
+            <ion-card-subtitle>Check-In</ion-card-subtitle>
+            <ion-card-title>
+                Results of last check-in
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+            <p>You don't seem to be doing very well these last few days. You may want to see a doctor to see if you have
+                are sick.</p>
+
+            <div class="results">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class="left">
+                            <h2>Date</h2>
+                        </ion-col>
+                        <ion-col>
+                            <h2>Stress</h2>
+                        </ion-col>
+                        <ion-col>
+                            <h2>Happyness</h2>
+                        </ion-col>
+                        <ion-col><h2>Energy</h2>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col class="left">
+                            Two weeks ago
+                        </ion-col>
+                        <ion-col>
+
+                            <i class="fal fa-frown fa-2x"></i>
+                        </ion-col>
+                        <ion-col>
+                            <i class="fal fa-frown-open fa-2x"></i>
+                        </ion-col>
+                        <ion-col>
+                            <i class="fal fa-battery-quarter fa-2x"></i>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col class="left">
+                            Last week
+                        </ion-col>
+                        <ion-col>
+
+                            <i class="fal fa-tired fa-2x"></i>
+                        </ion-col>
+                        <ion-col>
+                            <i class="fal fa-frown-open fa-2x"></i>
+                        </ion-col>
+                        <ion-col>
+                            <i class="fal fa-battery-slash fa-2x"></i>
+                        </ion-col>
+                    </ion-row>
+
+                    <ion-row>
+                        <ion-col class="left">
+                            Today
+                        </ion-col>
+                        <ion-col>
+
+                            <i class="fal fa-tired fa-2x"></i>
+                        </ion-col>
+                        <ion-col><i class="fal fa-frown fa-2x"></i>
+                        </ion-col>
+                        <ion-col>
+                            <i class="fal fa-battery-half fa-2x"></i>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+
+            </div>
+
+            <ion-button color="primary" [routerLink]="'/services'">Back to the Overview</ion-button>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
